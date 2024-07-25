@@ -46,11 +46,12 @@ class SinhVien {
   bool? totNghiep;
   SinhVien(this._id, this.name, this.age, this.diem, {this.totNghiep});
 
-  String get id => _id;
+  String get id => _id; 
 
   set id(String value) {
     _id = value;
   }
+
 
   @override
   String toString() {
@@ -64,11 +65,12 @@ class QLSinhVien {
     dsSinhVien.forEach((element) {
       if (element.diem >= 5.0) {
         element.totNghiep = true;
+        dsSVTotNghiep.add(element);
       } else {
         element.totNghiep = false;
       }
     });
-    dsSVTotNghiep = dsSinhVien.where((element) => element.totNghiep == true).toList();
+   // dsSVTotNghiep = dsSinhVien.where((element) => element.totNghiep == true).toList();
     return dsSVTotNghiep;
   }
 
